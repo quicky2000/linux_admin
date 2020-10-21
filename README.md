@@ -7,6 +7,27 @@ sudo apt-get install git gitk make g++ gdb flex bison
 sudo apt-get install libmicrohttpd-dev libsdl1.2-dev libglpk-dev
 ```
 
+Lib TBB requested when using header sequential on recent gcc
+
+```bash
+sudo apt install libtbb-dev
+```
+
+Gcc alternatives:
+
+```bash
+sudo update-alternatives --remove-all gcc
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+sudo update-alternatives --config gcc
+```
+
+CMake when requested nvcc is not located in /usr/bin, typically when we cuda-11.1 is installed instead of nvidia-cuda-toolkit
+
+```bash
+cmake -DCMAKE_CUDA_COMPILER=/usr/local/cuda-11.1/bin/nvcc <repository root>
+```
+
 ### SSD freeze issue
 
 Source: https://tekbyte.net/2020/fixing-nvme-ssd-problems-on-linux/
@@ -132,6 +153,34 @@ chmod -R +w ~/NVIDIA_CUDA-11.1_Samples
 cd ~/NVIDIA_CUDA-11.1_Samples/
 make
 bin/x86_64/linux/release/deviceQuery
+```
+
+### APT Packages for CUDA profiling
+```bash
+sudo apt-get install nsight-systems-2020.3.4
+sudo apt-get install nsight-compute-2020.2.1
+```
+
+Platform link has bad name for nsight-compute interactive profiling so need to create a link
+```bash
+cd /usr/lib/nsight-compute/target/
+sudo ln -s linux-desktop-glibc_2_11_3-x64/ linux-desktop-glibc_2_11_3-x86
+```
+
+#### Create a new file system on a new volume
+
+sudo fdisk /dev/xvdb 
+p to display partitions
+n new partition
+Keep default values
+w Write partition table
+sudo mkfs -t ext4 /dev/xvdb1 
+sudo mount /dev/xvdb1 /media/data
+Take care of rights
+
+Content of fstab file
+```bash
+UUID=a6f7b5f1-3191-482d-b4d7-b5dfebf6b39d       /media/data      ext4   rw,relatime     0 2
 ```
 
 ## Server
