@@ -155,7 +155,7 @@ make
 bin/x86_64/linux/release/deviceQuery
 ```
 
-### APT Packages for CUDA profiling
+#### APT Packages for CUDA profiling
 ```bash
 sudo apt-get install nsight-systems-2020.3.4
 sudo apt-get install nsight-compute-2020.2.1
@@ -181,6 +181,35 @@ Take care of rights
 Content of fstab file
 ```bash
 UUID=a6f7b5f1-3191-482d-b4d7-b5dfebf6b39d       /media/data      ext4   rw,relatime     0 2
+```
+#### Redimension partion if it doesn't fille the volume size
+```bash
+lsblk /dev/xvdb
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvdb    202:16   0    8G  0 disk 
+└─xvdb1 202:17   0 1023M  0 part /media/data
+```
+
+Increase partition size
+```bash
+sudo growpart /dev/xvdb 1
+CHANGED: partition=1 start=2048 old: size=2095104 end=2097152 new: size=16775135 end=16777183
+```
+
+You can check the result:
+```bash
+lsblk /dev/xvdb
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvdb    202:16   0   8G  0 disk 
+└─xvdb1 202:17   0   8G  0 part /media/data
+```
+
+Now you can resize the file system to use the full partition size
+```bash
+sudo resize2fs /dev/xvdb1 
+resize2fs 1.45.5 (07-Jan-2020)
+Resizing the filesystem on /dev/xvdb1 to 2096891 (4k) blocks.
+The filesystem on /dev/xvdb1 is now 2096891 (4k) blocks long.
 ```
 
 ## Server
