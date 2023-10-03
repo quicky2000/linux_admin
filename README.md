@@ -52,7 +52,8 @@ cat /sys/module/nvme_core/parameters/default_ps_max_latency_us
 
 Line FSTAB for data partition:
 ```
-UUID=adf882a7-7460-47d0-b3a3-c84fa891c4ec /media/data     ext4    user,atime,auto,rw,nodev,exec,suid,discard        0       2
+UUID=522d91d7-b8d9-4b99-93cf-f9599d81e973 /media/data     ext4    user,atime,auto,rw,nodev,exec,suid,discard        0       2
+UUID=1f280ea4-69ba-497b-82ae-96d7aa958e19 /media/backup     ext4    user,atime,noauto,rw,nodev,exec,suid,discard        0       2
 ```
 
 SSH keys
@@ -77,9 +78,9 @@ Partion | Type | Mount Point | Label  | Size | Info
 --------|------|-------------|--------|------|------
 /dev/nvme0n1p1 | fat32 | /boot/efi | SYSTEM | 260MiB | UEFI
 /dev/nvme0n1p2 | ext4 | / | | 38.15GiB | Kubuntu_18.04
-/dev/nvme0n1p3 | ext4 | / | | 38.15GiB | Kubuntu_20.04
-/dev/nvme0n1p4 | ext4 | | | |
-/dev/nvme0n1p5 | ext4 | | | |
+/dev/nvme0n1p3 | ext4 | / | | 38.15GiB | OpenSUse Tumblweed
+/dev/nvme0n1p4 | ext4 | / | | 38.15GiB | Manjaro
+/dev/nvme0n1p5 | ext4 | / | | 38.15GiB | Kubuntu 22.04
 /dev/nvme0n1p6 | ext4 | /media/data | | 801,02 GIB | Shared data
 
 Utility to create Live USB: **mkusb** https://help.ubuntu.com/community/mkusb
