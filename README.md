@@ -104,9 +104,16 @@ Partion | Type | Mount Point | Label  | Size | Info
 /dev/nvme0n1p5 | ext4 | | | |
 /dev/nvme0n1p6 | ext4 | /media/data | | 0.78 TB | Shared data
 
+
 Tumbleweed Line FSTAB for data partition:
 ```
 UUID=c839de72-07b7-4afb-8a1c-eb0ae51a8c47 /media/data     ext4    user,atime,auto,rw,nodev,exec,suid,discard        0       2
+```
+
+
+ Manjaro line FSTAB for data partition
+```
+UUID=c839de72-07b7-4afb-8a1c-eb0ae51a8c47 /media/data    ext4    user,relatime,auto,rw,nodev,exec,suid,discard 0 2
 ```
 
 ### Old Laptop
