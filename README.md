@@ -116,6 +116,13 @@ UUID=c839de72-07b7-4afb-8a1c-eb0ae51a8c47 /media/data     ext4    user,atime,aut
 UUID=c839de72-07b7-4afb-8a1c-eb0ae51a8c47 /media/data    ext4    user,relatime,auto,rw,nodev,exec,suid,discard 0 2
 ```
 
+
+Kubuntu line FSTAB for data partition
+```
+UUID=c839de72-07b7-4afb-8a1c-eb0ae51a8c47 /media/data     ext4    user,atime,auto,rw,nodev,exec,suid,discard        0       2
+```
+
+
 ### Old Laptop
 
 Line FSTAB for data partition:
