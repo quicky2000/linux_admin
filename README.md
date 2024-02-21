@@ -66,6 +66,13 @@ ln -sf /media/data/Mes_documents/linux/laptop/gitconfig .gitconfig
 Keybard for accents
 * Keyboard Harware and Layout -> Advanced -> Position of comose key -> Right Alt
 
+### Tumbelweed
+
+Instalaation of gcc-12
+```bash
+sudo zypper install gcc12
+sudo zypper install gcc12-c++
+```
 
 #### BIOS/UEFI
 
