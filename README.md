@@ -68,10 +68,35 @@ Keybard for accents
 
 ### Tumbelweed
 
-Instalaation of gcc-12
+
+Installation of Rust
+```bash
+sudo zypper install rustup && rustup toolchain install stable
+```
+
+
+Installation of gcc-12
 ```bash
 sudo zypper install gcc12
 sudo zypper install gcc12-c++
+```
+
+Installation of Master PDF editor to resize scan with custom formats
+```bash
+sudo snap install master-pdf-editor-5
+```
+
+
+Installation of Epson printer
+
+* Got to Epson download center http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
+* Download Epson Inkjet Printer Driver (ESC/P-R) for Linux
+* Download Epson Scan 2 select RPM package 64 bits
+```bash
+tar -zxvf epsonscan2-bundle-6.7.70.0.x86_64.rpm.tar.gz 
+cd epsonscan2-bundle-6.7.70.0.x86_64.rpm/
+./install.sh 
+esponscan2
 ```
 
 #### BIOS/UEFI
