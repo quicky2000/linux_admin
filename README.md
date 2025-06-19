@@ -99,6 +99,14 @@ cd epsonscan2-bundle-6.7.70.0.x86_64.rpm/
 esponscan2
 ```
 
+### Ubuntu/Kubuntu
+
+Installation of Rust
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup toolchain install stable
+```
+
 #### BIOS/UEFI
 
 To enter bios BOOT manager, press **F7** at boot
