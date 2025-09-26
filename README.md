@@ -290,3 +290,7 @@ The filesystem on /dev/xvdb1 is now 2096891 (4k) blocks long.
 
 ## RPI
 
+
+
+
+To convert heic/heif files to jpg on Ubuntu use heif-convert
