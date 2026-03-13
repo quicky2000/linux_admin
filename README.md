@@ -99,6 +99,15 @@ cd epsonscan2-bundle-6.7.70.0.x86_64.rpm/
 esponscan2
 ```
 
+
+Installation of VSC
+```bash
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/zypp/repos.d/vscode.repo > /dev/null
+sudo zypper install code
+```
+
+
 ### Ubuntu/Kubuntu
 
 Installation of Rust
