@@ -28,6 +28,41 @@ CMake when requested nvcc is not located in /usr/bin, typically when we cuda-11.
 cmake -DCMAKE_CUDA_COMPILER=/usr/local/cuda-11.1/bin/nvcc <repository root>
 ```
 
+### Visual Studio Code
+
+Extensions for my C/C++ projects
+* Install Intellisense C/C++
+* Install CMake Tools
+
+
+Configure Intellisense to use CMakeTools as defaut configuration Provider:
+* Go in Intellisense settings
+* Put ms-vscode.cmake-tools as Configuration Provider
+
+In a project create file MakePresets.json and fill it with the configuration used to generate CMake command
+```json
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "description": "Default settings for my CMake projects",
+            "generator": "Unix Makefiles",
+            "binaryDir": "${workspaceFolder}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "NO",
+                "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.3/bin/nvcc",
+                "CMAKE_CXX_COMPILER": "/usr/bin/g++-12",
+                "CMAKE_CUDA_HOST_COMPILER": "/usr/bin/g++-12",
+                "CMAKE_CUDA_ARCHITECTURES": "75"
+            }
+        }
+    ]
+}
+```
+
+
 ### SSD freeze issue
 
 Source: https://tekbyte.net/2020/fixing-nvme-ssd-problems-on-linux/
