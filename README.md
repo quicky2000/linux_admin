@@ -143,6 +143,12 @@ sudo zypper install code
 ```
 
 
+To reduce pressure on home:
+```bash
+.rustup -> /media/data/Tumbleweed/rustup.
+.cache -> /media/data/Tumbleweed/cache.
+```
+
 ### Ubuntu/Kubuntu
 
 Installation of Rust
