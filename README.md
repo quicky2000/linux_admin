@@ -239,11 +239,39 @@ Utility to create Live USB: **mkusb** https://help.ubuntu.com/community/mkusb
 
 ## AWS
 
+### Launch an instance
+
+* Log on AWS console: https://eu-west-3.console.aws.amazon.com/ec2
+* Select Instances
+* Click on Launch Instances
+* Click on My AMIs
+* Select an AMI
+* In Instance Type select g4dn.xlarge for an instance with GPU
+* Click on Edit button of Network Settings
+* Select subnet eu-west-3b to be able to mount data volume
+* In Inbound Security Group Rules specify Source type as My IP to allow ssh only from my IP address
+* CLick on Launch Instance
+* Once instance is running select it
+* Click on Actions button
+* Click on attach volume
+* Select the data volume ( should be visibile if you selected subnet eu-west-3b)
+* Indicate mount point /dev/sdb
+
 ### Usage
 * Connection to an Ubuntu instance using ssh
 ```bash
 ssh -i ~/.ssh/<amazon-key> ubuntu@<instance-DSN-name or IP address>
 ```
+
+### Stop an instance
+
+To stop an instance:
+* instance terminal sudo umount /media/data
+* select instance in EC2 console
+* Click on action button
+* Click on detach volume
+* Click on Instance state
+* Click on terminate instance
 
 ### Instance installation
 
