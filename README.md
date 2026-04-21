@@ -291,6 +291,21 @@ cd /usr/lib/nsight-compute/target/
 sudo ln -s linux-desktop-glibc_2_11_3-x64/ linux-desktop-glibc_2_11_3-x86
 ```
 
+#### Update OS AMI
+
+When instance is running, the AMI corresponding Snapshot is mounted as a volume
+In EC2 console:
+* Select the mounted volume
+* Click on Actions button
+* Click on Create Snapshot
+* Fill creation formula
+
+Once snapshot is created:
+* Select the new snapshot
+* Click on Actions button
+* Click on Create image from snapshot
+* Create the new AMI image
+
 #### Create a new file system on a new volume
 
 sudo fdisk /dev/xvdb 
