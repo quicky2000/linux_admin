@@ -39,7 +39,7 @@ Configure Intellisense to use CMakeTools as defaut configuration Provider:
 * Go in Intellisense settings
 * Put ms-vscode.cmake-tools as Configuration Provider
 
-In a project create file MakePresets.json and fill it with the configuration used to generate CMake command
+In a project create file CMakePresets.json and fill it with the configuration used to generate CMake command
 ```json
 {
     "version": 3,
