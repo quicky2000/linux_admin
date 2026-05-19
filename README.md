@@ -147,6 +147,12 @@ To reduce pressure on home:
 ```bash
 .rustup -> /media/data/Tumbleweed/rustup.
 .cache -> /media/data/Tumbleweed/cache.
+.vscode -> /media/data/Tumbleweed/vscode./
+.local/share/JetBrains -> /media/data/Tumbleweed/local_share_JetBrains.
+~/.config/Code -> /media/data/Tumbleweed/.config_Code
+
+sudo journalctl --vacuum-time 1m
+
 ```
 
 ### Ubuntu/Kubuntu
