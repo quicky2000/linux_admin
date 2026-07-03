@@ -152,6 +152,7 @@ To reduce pressure on home:
 ~/.config/Code -> /media/data/Tumbleweed/.config_Code
 
 sudo journalctl --vacuum-time 1m
+sudo sh -c 'rm -rf /var/lib/snapd/cache/*'
 
 ```
 
