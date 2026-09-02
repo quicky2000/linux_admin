@@ -38,6 +38,7 @@ Extensions for my C/C++ projects
 Configure Intellisense to use CMakeTools as defaut configuration Provider:
 * Go in Intellisense settings
 * Put ms-vscode.cmake-tools as Configuration Provider
+* check link /bin/cmake -> /snap/clion/465/bin/cmake/linux/x64/bin/cmake
 
 In a project create file CMakePresets.json and fill it with the configuration used to generate CMake command
 ```json
